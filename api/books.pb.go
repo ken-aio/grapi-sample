@@ -26,9 +26,9 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type Book struct {
-	BookId               int32    `protobuf:"varint,1,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
-	Title                string   `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	IsNew                bool     `protobuf:"varint,3,opt,name=is_new,json=isNew,proto3" json:"is_new,omitempty"`
+	BookId               int32    `protobuf:"varint,1,opt,name=book_id,json=bookId,proto3" json:"book_id"`
+	Title                string   `protobuf:"bytes,2,opt,name=title,proto3" json:"title"`
+	IsNew                bool     `protobuf:"varint,3,opt,name=is_new,json=isNew,proto3" json:"is_new"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -110,7 +110,7 @@ func (m *ListBooksRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_ListBooksRequest proto.InternalMessageInfo
 
 type ListBooksResponse struct {
-	Books                []*Book  `protobuf:"bytes,1,rep,name=books,proto3" json:"books,omitempty"`
+	Books                []*Book  `protobuf:"bytes,1,rep,name=books,proto3" json:"books"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -148,7 +148,7 @@ func (m *ListBooksResponse) GetBooks() []*Book {
 }
 
 type GetBookRequest struct {
-	BookId               string   `protobuf:"bytes,1,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
+	BookId               string   `protobuf:"bytes,1,opt,name=book_id,json=bookId,proto3" json:"book_id"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -186,7 +186,7 @@ func (m *GetBookRequest) GetBookId() string {
 }
 
 type CreateBookRequest struct {
-	Book                 *Book    `protobuf:"bytes,1,opt,name=book,proto3" json:"book,omitempty"`
+	Book                 *Book    `protobuf:"bytes,1,opt,name=book,proto3" json:"book"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -224,7 +224,7 @@ func (m *CreateBookRequest) GetBook() *Book {
 }
 
 type UpdateBookRequest struct {
-	Book                 *Book    `protobuf:"bytes,1,opt,name=book,proto3" json:"book,omitempty"`
+	Book                 *Book    `protobuf:"bytes,1,opt,name=book,proto3" json:"book"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -262,7 +262,7 @@ func (m *UpdateBookRequest) GetBook() *Book {
 }
 
 type DeleteBookRequest struct {
-	BookId               string   `protobuf:"bytes,1,opt,name=book_id,json=bookId,proto3" json:"book_id,omitempty"`
+	BookId               string   `protobuf:"bytes,1,opt,name=book_id,json=bookId,proto3" json:"book_id"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
