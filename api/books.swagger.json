@@ -71,7 +71,8 @@
             "name": "book.book_id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "integer",
+            "format": "int32"
           },
           {
             "name": "body",
@@ -139,7 +140,8 @@
       "type": "object",
       "properties": {
         "book_id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int32"
         },
         "title": {
           "type": "string"

@@ -26,8 +26,13 @@ type bookServiceServerImpl struct {
 }
 
 func (s *bookServiceServerImpl) ListBooks(ctx context.Context, req *api_pb.ListBooksRequest) (*api_pb.ListBooksResponse, error) {
-	// TODO: Not yet implemented.
-	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
+	return &api_pb.ListBooksResponse{
+		Books: []*api_pb.Book{
+			&api_pb.Book{BookId: 1, Title: "t1", IsNew: true},
+			&api_pb.Book{BookId: 2, Title: "t2", IsNew: false},
+			&api_pb.Book{BookId: 3, Title: "t3", IsNew: true},
+		},
+	}, nil
 }
 
 func (s *bookServiceServerImpl) GetBook(ctx context.Context, req *api_pb.GetBookRequest) (*api_pb.Book, error) {
